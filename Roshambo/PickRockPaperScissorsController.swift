@@ -11,6 +11,7 @@ import Foundation
 
 class PickRockPaperScissorsController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,7 +24,7 @@ class PickRockPaperScissorsController: UIViewController {
     
     @IBOutlet weak var result: UILabel!
     
-    var player1: String
+    var player1: String = ""
     
     @IBAction func pickRock() {
         player1 = "rock"
@@ -63,26 +64,30 @@ class PickRockPaperScissorsController: UIViewController {
         var victoryMessage = "And the winner is..."
         var victoryImage = "ItsATie.png"
         
+//        let game = (player1, player2)
+        
+//        switch game {
+//        case game[1] = game[2]:
         if player1 == player2 {
-            victoryMessage = "It's a tie"
+            victoryMessage = "\(player1) vs. \(player2): It's a tie"
             victoryImage = "ItsATie.png"
         } else if player1 == "rock" && player2 == "scissors" {
-            victoryMessage = "Player 1 Wins"
+            victoryMessage = "\(player1) vs. \(player2): Player 1 Wins"
             victoryImage = "RockCrushesScissors.jpeg"
         } else if player1 == "rock" && player2 == "paper" {
-            victoryMessage = "Player 2 Wins"
+            victoryMessage = "\(player1) vs. \(player2): Player 2 Wins"
             victoryImage = "PaperCoversRock.jpg"
         } else if player1 == "paper" && player2 == "rock" {
-            victoryMessage = "Player 1 Wins"
+            victoryMessage = "\(player1) vs. \(player2): Player 1 Wins"
             victoryImage = "PaperCoversRock.jpg"
         } else if player1 == "paper" && player2 == "scissors" {
-            victoryMessage = "Player 2 Wins"
+            victoryMessage = "\(player1) vs. \(player2): Player 2 Wins"
             victoryImage = "ScissorsCutPaper.jpg"
         } else if player1 == "scissors" && player2 == "rock" {
-            victoryMessage = "Player 2 Wins"
+            victoryMessage = "\(player1) vs. \(player2): Player 2 Wins"
             victoryImage = "RockCrushesScissors.jpeg"
         } else if player1 == "scissors" && player2 == "paper" {
-            victoryMessage = "Player 1 Wins"
+            victoryMessage = "\(player1) vs. \(player2): Player 1 Wins"
             victoryImage = "ScissorsCutPaper.jpg"
         }
         self.result.text = victoryMessage
