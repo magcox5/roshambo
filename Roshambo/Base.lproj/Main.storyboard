@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--PickRockPaperScissorsController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickRockPaperScissorsController" id="BYZ-38-t0r" userLabel="PickRockPaperScissorsController" customClass="PickRockPaperScissorsController" customModule="Roshambo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-cm-9rd">
+                                <rect key="frame" x="75" y="0.0" width="240" height="401"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-a3-ufm" userLabel="Rock">
+                                        <rect key="frame" x="62" y="92" width="116" height="65"/>
+                                        <state key="normal" image="rock.png"/>
+                                        <connections>
+                                            <action selector="pickRock" destination="BYZ-38-t0r" eventType="touchUpInside" id="JB5-aq-KZs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-MV-ea1" userLabel="Paper">
+                                        <rect key="frame" x="59" y="196" width="122" height="65"/>
+                                        <state key="normal" image="paper.png"/>
+                                        <connections>
+                                            <action selector="pickPaper" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z7N-fs-wy4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ex-Rg-hzP" userLabel="Scissors">
+                                        <rect key="frame" x="49" y="302" width="143" height="65"/>
+                                        <state key="normal" image="scissors.png"/>
+                                        <connections>
+                                            <action selector="pickScissors" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvX-eP-2OQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ro-Sham-Bo  GO!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgI-TE-guz">
+                                        <rect key="frame" x="42" y="29" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeD-S9-Oxl" userLabel="Result">
+                                        <rect key="frame" x="27" y="372" width="188" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wgU-cm-9rd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EGH-pW-PsA"/>
+                            <constraint firstItem="wgU-cm-9rd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V7J-hi-B5F"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="paper" destination="gOK-MV-ea1" id="A6s-54-ZwK"/>
+                        <outlet property="result" destination="qeD-S9-Oxl" id="2RM-9i-w1T"/>
+                        <outlet property="rock" destination="fRk-a3-ufm" id="OGj-rk-Mhd"/>
+                        <outlet property="scissors" destination="6ex-Rg-hzP" id="2x3-dN-Ye9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="225" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="paper.png" width="75" height="65"/>
+        <image name="rock.png" width="75" height="65"/>
+        <image name="scissors.png" width="75" height="65"/>
+    </resources>
 </document>

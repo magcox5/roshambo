@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		DA143C461C9908C3005DE2B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA143C451C9908C3005DE2B9 /* AppDelegate.swift */; };
-		DA143C481C9908C3005DE2B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA143C471C9908C3005DE2B9 /* ViewController.swift */; };
+		DA143C481C9908C3005DE2B9 /* PickRockPaperScissorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA143C471C9908C3005DE2B9 /* PickRockPaperScissorsController.swift */; };
 		DA143C4B1C9908C3005DE2B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA143C491C9908C3005DE2B9 /* Main.storyboard */; };
 		DA143C4D1C9908C3005DE2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA143C4C1C9908C3005DE2B9 /* Assets.xcassets */; };
 		DA143C501C9908C3005DE2B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA143C4E1C9908C3005DE2B9 /* LaunchScreen.storyboard */; };
+		DA143C5E1C990978005DE2B9 /* itsATie.png in Resources */ = {isa = PBXBuildFile; fileRef = DA143C571C990978005DE2B9 /* itsATie.png */; };
+		DA143C5F1C990978005DE2B9 /* paper.png in Resources */ = {isa = PBXBuildFile; fileRef = DA143C581C990978005DE2B9 /* paper.png */; };
+		DA143C601C990978005DE2B9 /* PaperCoversRock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA143C591C990978005DE2B9 /* PaperCoversRock.jpg */; };
+		DA143C611C990978005DE2B9 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = DA143C5A1C990978005DE2B9 /* rock.png */; };
+		DA143C621C990978005DE2B9 /* RockCrushesScissors.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA143C5B1C990978005DE2B9 /* RockCrushesScissors.jpeg */; };
+		DA143C631C990978005DE2B9 /* scissors.png in Resources */ = {isa = PBXBuildFile; fileRef = DA143C5C1C990978005DE2B9 /* scissors.png */; };
+		DA143C641C990978005DE2B9 /* ScissorsCutPaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA143C5D1C990978005DE2B9 /* ScissorsCutPaper.jpg */; };
+		DA143C661C990C40005DE2B9 /* ResolveRoShamBoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA143C651C990C40005DE2B9 /* ResolveRoShamBoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA143C421C9908C3005DE2B9 /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA143C451C9908C3005DE2B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA143C471C9908C3005DE2B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA143C471C9908C3005DE2B9 /* PickRockPaperScissorsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickRockPaperScissorsController.swift; sourceTree = "<group>"; };
 		DA143C4A1C9908C3005DE2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA143C4C1C9908C3005DE2B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA143C4F1C9908C3005DE2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA143C511C9908C3005DE2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA143C571C990978005DE2B9 /* itsATie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = itsATie.png; path = ../../Roshambo_ImageAssets/itsATie.png; sourceTree = "<group>"; };
+		DA143C581C990978005DE2B9 /* paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper.png; path = ../../Roshambo_ImageAssets/paper.png; sourceTree = "<group>"; };
+		DA143C591C990978005DE2B9 /* PaperCoversRock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = PaperCoversRock.jpg; path = ../../Roshambo_ImageAssets/PaperCoversRock.jpg; sourceTree = "<group>"; };
+		DA143C5A1C990978005DE2B9 /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock.png; path = ../../Roshambo_ImageAssets/rock.png; sourceTree = "<group>"; };
+		DA143C5B1C990978005DE2B9 /* RockCrushesScissors.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = RockCrushesScissors.jpeg; path = ../../Roshambo_ImageAssets/RockCrushesScissors.jpeg; sourceTree = "<group>"; };
+		DA143C5C1C990978005DE2B9 /* scissors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scissors.png; path = ../../Roshambo_ImageAssets/scissors.png; sourceTree = "<group>"; };
+		DA143C5D1C990978005DE2B9 /* ScissorsCutPaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ScissorsCutPaper.jpg; path = ../../Roshambo_ImageAssets/ScissorsCutPaper.jpg; sourceTree = "<group>"; };
+		DA143C651C990C40005DE2B9 /* ResolveRoShamBoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolveRoShamBoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +71,17 @@
 			isa = PBXGroup;
 			children = (
 				DA143C451C9908C3005DE2B9 /* AppDelegate.swift */,
-				DA143C471C9908C3005DE2B9 /* ViewController.swift */,
+				DA143C471C9908C3005DE2B9 /* PickRockPaperScissorsController.swift */,
+				DA143C651C990C40005DE2B9 /* ResolveRoShamBoController.swift */,
 				DA143C491C9908C3005DE2B9 /* Main.storyboard */,
 				DA143C4C1C9908C3005DE2B9 /* Assets.xcassets */,
+				DA143C571C990978005DE2B9 /* itsATie.png */,
+				DA143C581C990978005DE2B9 /* paper.png */,
+				DA143C591C990978005DE2B9 /* PaperCoversRock.jpg */,
+				DA143C5A1C990978005DE2B9 /* rock.png */,
+				DA143C5B1C990978005DE2B9 /* RockCrushesScissors.jpeg */,
+				DA143C5C1C990978005DE2B9 /* scissors.png */,
+				DA143C5D1C990978005DE2B9 /* ScissorsCutPaper.jpg */,
 				DA143C4E1C9908C3005DE2B9 /* LaunchScreen.storyboard */,
 				DA143C511C9908C3005DE2B9 /* Info.plist */,
 			);
@@ -123,9 +147,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA143C641C990978005DE2B9 /* ScissorsCutPaper.jpg in Resources */,
 				DA143C501C9908C3005DE2B9 /* LaunchScreen.storyboard in Resources */,
+				DA143C621C990978005DE2B9 /* RockCrushesScissors.jpeg in Resources */,
+				DA143C5F1C990978005DE2B9 /* paper.png in Resources */,
+				DA143C5E1C990978005DE2B9 /* itsATie.png in Resources */,
+				DA143C611C990978005DE2B9 /* rock.png in Resources */,
+				DA143C601C990978005DE2B9 /* PaperCoversRock.jpg in Resources */,
 				DA143C4D1C9908C3005DE2B9 /* Assets.xcassets in Resources */,
 				DA143C4B1C9908C3005DE2B9 /* Main.storyboard in Resources */,
+				DA143C631C990978005DE2B9 /* scissors.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA143C481C9908C3005DE2B9 /* ViewController.swift in Sources */,
+				DA143C481C9908C3005DE2B9 /* PickRockPaperScissorsController.swift in Sources */,
+				DA143C661C990C40005DE2B9 /* ResolveRoShamBoController.swift in Sources */,
 				DA143C461C9908C3005DE2B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
