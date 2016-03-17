@@ -10,7 +10,14 @@ import Foundation
 
 import UIKit
 
-class ViewController: UIViewController {
+class ResolveRoShamBoController: UIViewController {
+
+    var player1: String?
+    var player2: String?
+    
+    @IBOutlet weak var Result: UILabel!
+    
+    @IBOutlet weak var WinningImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

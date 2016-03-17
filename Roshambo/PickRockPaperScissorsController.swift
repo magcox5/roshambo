@@ -25,10 +25,27 @@ class PickRockPaperScissorsController: UIViewController {
     @IBOutlet weak var result: UILabel!
     
     var player1: String = ""
+    var player2: String = ""
+    var victoryMessage = "And the winner is..."
+    var victoryImage = "ItsATie.png"
     
     @IBAction func pickRock() {
         player1 = "rock"
         decideWinner()
+        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            
+            if segue.identifier == "decideWinner" {
+                
+                let controller = segue.destinationViewController as!
+                ResolveRoShamBoController
+                
+                controller.player1 = self.player1
+                controller.player2 = self.player2
+                controller.Result.text = self.victoryMessage
+                controller.WinningImage.image =
+                UIImage(named: "d\(victoryImage)")
+            }        
+        }
     }
 
     @IBAction func pickPaper() {
@@ -60,37 +77,33 @@ class PickRockPaperScissorsController: UIViewController {
 
     func decideWinner() {
         // get opponents' choice
-        let player2 = getRoShamBoRandom()
-        var victoryMessage = "And the winner is..."
-        var victoryImage = "ItsATie.png"
+        player2 = getRoShamBoRandom()
         
-//        let game = (player1, player2)
+        let game = (player1, player2)
         
-//        switch game {
-//        case game[1] = game[2]:
-        if player1 == player2 {
+        switch game {
+        case ("rock", "scissors"):
+            victoryMessage = "\(player1) vs. \(player2): I Win"
+            victoryImage = "RockCrushesScissors.jpeg"
+        case ("rock", "paper"):
+            victoryMessage = "\(player1) vs. \(player2): You Win"
+            victoryImage = "PaperCoversRock.jpg"
+        case ("paper", "rock"):
+            victoryMessage = "\(player1) vs. \(player2): I Win"
+            victoryImage = "PaperCoversRock.jpg"
+        case ("paper", "scissors"):
+            victoryMessage = "\(player1) vs. \(player2): You Win"
+            victoryImage = "ScissorsCutPaper.jpg"
+        case ("scissors", "rock"):
+            victoryMessage = "\(player1) vs. \(player2): You Win"
+            victoryImage = "RockCrushesScissors.jpeg"
+        case ("scissors", "paper"):
+            victoryMessage = "\(player1) vs. \(player2): I Win"
+            victoryImage = "ScissorsCutPaper.jpg"
+        default:
             victoryMessage = "\(player1) vs. \(player2): It's a tie"
             victoryImage = "ItsATie.png"
-        } else if player1 == "rock" && player2 == "scissors" {
-            victoryMessage = "\(player1) vs. \(player2): Player 1 Wins"
-            victoryImage = "RockCrushesScissors.jpeg"
-        } else if player1 == "rock" && player2 == "paper" {
-            victoryMessage = "\(player1) vs. \(player2): Player 2 Wins"
-            victoryImage = "PaperCoversRock.jpg"
-        } else if player1 == "paper" && player2 == "rock" {
-            victoryMessage = "\(player1) vs. \(player2): Player 1 Wins"
-            victoryImage = "PaperCoversRock.jpg"
-        } else if player1 == "paper" && player2 == "scissors" {
-            victoryMessage = "\(player1) vs. \(player2): Player 2 Wins"
-            victoryImage = "ScissorsCutPaper.jpg"
-        } else if player1 == "scissors" && player2 == "rock" {
-            victoryMessage = "\(player1) vs. \(player2): Player 2 Wins"
-            victoryImage = "RockCrushesScissors.jpeg"
-        } else if player1 == "scissors" && player2 == "paper" {
-            victoryMessage = "\(player1) vs. \(player2): Player 1 Wins"
-            victoryImage = "ScissorsCutPaper.jpg"
         }
-        self.result.text = victoryMessage
     }
     
     

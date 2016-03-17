@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-cm-9rd">
@@ -25,6 +25,7 @@
                                         <state key="normal" image="rock.png"/>
                                         <connections>
                                             <action selector="pickRock" destination="BYZ-38-t0r" eventType="touchUpInside" id="JB5-aq-KZs"/>
+                                            <segue destination="QWu-nT-Orp" kind="modal" identifier="decideWinner" id="ReM-HH-c2q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-MV-ea1" userLabel="Paper">
@@ -47,12 +48,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who wins???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeD-S9-Oxl" userLabel="Result">
-                                        <rect key="frame" x="27" y="372" width="188" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -65,17 +60,60 @@
                     </view>
                     <connections>
                         <outlet property="paper" destination="gOK-MV-ea1" id="A6s-54-ZwK"/>
-                        <outlet property="result" destination="qeD-S9-Oxl" id="2RM-9i-w1T"/>
                         <outlet property="rock" destination="fRk-a3-ufm" id="OGj-rk-Mhd"/>
                         <outlet property="scissors" destination="6ex-Rg-hzP" id="2x3-dN-Ye9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="339"/>
+            <point key="canvasLocation" x="120" y="320.92000000000002"/>
+        </scene>
+        <!--Resolve Ro Sham Bo Controller-->
+        <scene sceneID="96E-0e-qz6">
+            <objects>
+                <viewController storyboardIdentifier="ResolveRoShamBoController" id="QWu-nT-Orp" customClass="ResolveRoShamBoController" customModule="Roshambo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T32-iA-XZv"/>
+                        <viewControllerLayoutGuide type="bottom" id="zRQ-b4-myM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nVl-St-xAz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-uf-5zx">
+                                <rect key="frame" x="0.0" y="0.0" width="221" height="245"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who wins???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeD-S9-Oxl" userLabel="Result">
+                                        <rect key="frame" x="16" y="193" width="188" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PaperCoversRock.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FMg-45-m22" userLabel="WinningImage">
+                                        <rect key="frame" x="-10" y="15" width="240" height="128"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KpQ-uf-5zx" firstAttribute="centerX" secondItem="nVl-St-xAz" secondAttribute="centerX" id="5si-Yi-Uwe"/>
+                            <constraint firstItem="KpQ-uf-5zx" firstAttribute="centerY" secondItem="nVl-St-xAz" secondAttribute="centerY" id="KHe-mj-q5Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Result" destination="qeD-S9-Oxl" id="LRS-un-v5Q"/>
+                        <outlet property="WinningImage" destination="FMg-45-m22" id="tLr-8o-dzg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ag-gh-5Ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="320"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PaperCoversRock.jpg" width="160" height="120"/>
         <image name="paper.png" width="75" height="65"/>
         <image name="rock.png" width="75" height="65"/>
         <image name="scissors.png" width="75" height="65"/>
