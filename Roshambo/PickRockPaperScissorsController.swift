@@ -22,30 +22,32 @@ class PickRockPaperScissorsController: UIViewController {
     @IBOutlet weak var paper: UIButton!
     @IBOutlet weak var scissors: UIButton!
     
-    @IBOutlet weak var result: UILabel!
-    
     var player1: String = ""
     var player2: String = ""
-    var victoryMessage = "And the winner is..."
-    var victoryImage = "ItsATie.png"
+    var victoryMessage: String?
+    var victoryImage: String?
     
     @IBAction func pickRock() {
         player1 = "rock"
         decideWinner()
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            
-            if segue.identifier == "decideWinner" {
-                
-                let controller = segue.destinationViewController as!
-                ResolveRoShamBoController
-                
-                controller.player1 = self.player1
-                controller.player2 = self.player2
-                controller.Result.text = self.victoryMessage
-                controller.WinningImage.image =
-                UIImage(named: "d\(victoryImage)")
-            }        
+        
+        print(self.victoryImage, self.victoryMessage)
+        
+        let nextController = ResolveRoShamBoController()
+        if let victoryMessage = self.victoryMessage {
+            nextController.Result!.text = victoryMessage
+        } else {
+            nextController.Result = nil
         }
+
+        if let victoryImage = self.victoryImage {
+        nextController.WinningImage!.image = UIImage(named: "\(victoryImage)")
+        } else {
+            nextController.WinningImage = nil
+        }
+        
+        self.presentViewController(nextController, animated:  true, completion:nil)
+
     }
 
     @IBAction func pickPaper() {

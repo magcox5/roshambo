@@ -25,7 +25,6 @@
                                         <state key="normal" image="rock.png"/>
                                         <connections>
                                             <action selector="pickRock" destination="BYZ-38-t0r" eventType="touchUpInside" id="JB5-aq-KZs"/>
-                                            <segue destination="QWu-nT-Orp" kind="modal" identifier="decideWinner" id="ReM-HH-c2q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-MV-ea1" userLabel="Paper">
@@ -83,20 +82,32 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-uf-5zx">
                                 <rect key="frame" x="0.0" y="0.0" width="221" height="245"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RockCrushesScissors.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="FMg-45-m22" userLabel="WinningImage">
+                                        <rect key="frame" x="-10" y="15" width="240" height="128"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwI-kh-PkR">
+                                        <rect key="frame" x="59" y="197" width="103" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="PLAY AGAIN">
+                                            <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismiss" destination="QWu-nT-Orp" eventType="touchUpInside" id="3n4-dy-xwR"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who wins???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeD-S9-Oxl" userLabel="Result">
-                                        <rect key="frame" x="16" y="193" width="188" height="21"/>
+                                        <rect key="frame" x="16" y="151" width="188" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PaperCoversRock.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FMg-45-m22" userLabel="WinningImage">
-                                        <rect key="frame" x="-10" y="15" width="240" height="128"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KpQ-uf-5zx" firstAttribute="centerX" secondItem="nVl-St-xAz" secondAttribute="centerX" id="5si-Yi-Uwe"/>
                             <constraint firstItem="KpQ-uf-5zx" firstAttribute="centerY" secondItem="nVl-St-xAz" secondAttribute="centerY" id="KHe-mj-q5Z"/>
@@ -113,7 +124,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PaperCoversRock.jpg" width="160" height="120"/>
+        <image name="RockCrushesScissors.jpeg" width="256" height="192"/>
         <image name="paper.png" width="75" height="65"/>
         <image name="rock.png" width="75" height="65"/>
         <image name="scissors.png" width="75" height="65"/>
