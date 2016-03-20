@@ -22,93 +22,30 @@ class PickRockPaperScissorsController: UIViewController {
     @IBOutlet weak var paper: UIButton!
     @IBOutlet weak var scissors: UIButton!
     
-    var player1: String = ""
-    var player2: String = ""
-    var victoryMessage: String?
-    var victoryImage: String?
+//    var player1: String = ""
     
     @IBAction func pickRock() {
-        player1 = "rock"
-        decideWinner()
-        
-        print(self.victoryImage, self.victoryMessage)
-        
-        let nextController = ResolveRoShamBoController()
-        if let victoryMessage = self.victoryMessage {
-            nextController.Result!.text = victoryMessage
-        } else {
-            nextController.Result = nil
-        }
-
-        if let victoryImage = self.victoryImage {
-        nextController.WinningImage!.image = UIImage(named: "\(victoryImage)")
-        } else {
-            nextController.WinningImage = nil
-        }
-        
-        self.presentViewController(nextController, animated:  true, completion:nil)
-
+    let nextController = self.storyboard?.instantiateViewControllerWithIdentifier("ResolveRoShamBoController") as! ResolveRoShamBoController
+        nextController.player1 = "rock"
+        presentViewController(nextController, animated: true, completion: nil)
     }
 
     @IBAction func pickPaper() {
-        player1 = "paper"
-        decideWinner()
+        performSegueWithIdentifier("play", sender: "paper")
     }
     
-    @IBAction func pickScissors() {
-        player1 = "scissors"
-        decideWinner()
-    }
-
-    func getRoShamBoRandom() ->String {
-        var playerChoice: String
-        
-        // Generate a random Int32 using arc4Random
-        let randomValue = 1 + arc4random() % 3
-        
-        if randomValue == 1 {
-            playerChoice = "rock"
-        } else if randomValue == 2 {
-            playerChoice = "paper"
+//    @IBAction func pickScissors() {
+//
+//    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "play" {
+            let vc = segue.destinationViewController as! ResolveRoShamBoController
+            vc.player1 = "paper"
         } else {
-            playerChoice = "scissors"
-        }
-        return playerChoice
-    }
-
-
-    func decideWinner() {
-        // get opponents' choice
-        player2 = getRoShamBoRandom()
-        
-        let game = (player1, player2)
-        
-        switch game {
-        case ("rock", "scissors"):
-            victoryMessage = "\(player1) vs. \(player2): I Win"
-            victoryImage = "RockCrushesScissors.jpeg"
-        case ("rock", "paper"):
-            victoryMessage = "\(player1) vs. \(player2): You Win"
-            victoryImage = "PaperCoversRock.jpg"
-        case ("paper", "rock"):
-            victoryMessage = "\(player1) vs. \(player2): I Win"
-            victoryImage = "PaperCoversRock.jpg"
-        case ("paper", "scissors"):
-            victoryMessage = "\(player1) vs. \(player2): You Win"
-            victoryImage = "ScissorsCutPaper.jpg"
-        case ("scissors", "rock"):
-            victoryMessage = "\(player1) vs. \(player2): You Win"
-            victoryImage = "RockCrushesScissors.jpeg"
-        case ("scissors", "paper"):
-            victoryMessage = "\(player1) vs. \(player2): I Win"
-            victoryImage = "ScissorsCutPaper.jpg"
-        default:
-            victoryMessage = "\(player1) vs. \(player2): It's a tie"
-            victoryImage = "ItsATie.png"
+            let vc = segue.destinationViewController as! ResolveRoShamBoController
+            vc.player1 = "scissors"
         }
     }
-    
-    
-
 }
 

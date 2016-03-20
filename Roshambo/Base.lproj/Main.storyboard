@@ -38,13 +38,13 @@
                                         <rect key="frame" x="49" y="302" width="143" height="65"/>
                                         <state key="normal" image="scissors.png"/>
                                         <connections>
-                                            <action selector="pickScissors" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvX-eP-2OQ"/>
+                                            <segue destination="QWu-nT-Orp" kind="modal" identifier="play2" id="VBi-Qi-BOX"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ro-Sham-Bo  GO!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgI-TE-guz">
                                         <rect key="frame" x="42" y="29" width="156" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -61,6 +61,7 @@
                         <outlet property="paper" destination="gOK-MV-ea1" id="A6s-54-ZwK"/>
                         <outlet property="rock" destination="fRk-a3-ufm" id="OGj-rk-Mhd"/>
                         <outlet property="scissors" destination="6ex-Rg-hzP" id="2x3-dN-Ye9"/>
+                        <segue destination="QWu-nT-Orp" kind="modal" identifier="play" id="CjY-PH-SgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,7 +83,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-uf-5zx">
                                 <rect key="frame" x="0.0" y="0.0" width="221" height="245"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RockCrushesScissors.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="FMg-45-m22" userLabel="WinningImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="itsATie.png" translatesAutoresizingMaskIntoConstraints="NO" id="FMg-45-m22" userLabel="resultImage">
                                         <rect key="frame" x="-10" y="15" width="240" height="128"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwI-kh-PkR">
@@ -100,7 +101,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who wins???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeD-S9-Oxl" userLabel="Result">
                                         <rect key="frame" x="16" y="151" width="188" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -115,7 +116,7 @@
                     </view>
                     <connections>
                         <outlet property="Result" destination="qeD-S9-Oxl" id="LRS-un-v5Q"/>
-                        <outlet property="WinningImage" destination="FMg-45-m22" id="tLr-8o-dzg"/>
+                        <outlet property="resultImage" destination="FMg-45-m22" id="59n-it-AaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ag-gh-5Ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,9 +125,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RockCrushesScissors.jpeg" width="256" height="192"/>
+        <image name="itsATie.png" width="183" height="200"/>
         <image name="paper.png" width="75" height="65"/>
         <image name="rock.png" width="75" height="65"/>
         <image name="scissors.png" width="75" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VBi-Qi-BOX"/>
+    </inferredMetricsTieBreakers>
 </document>
