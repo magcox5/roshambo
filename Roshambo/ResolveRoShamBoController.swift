@@ -65,22 +65,22 @@ class ResolveRoShamBoController: UIViewController {
         
         switch game {
         case ("rock", "scissors"):
-            Result?.text = "\(player1) vs. \(player2): I Win"
+            Result?.text = "\(player1) vs. \(player2): You Win! :)"
             resultImage?.image = UIImage(named: "RockCrushesScissors.jpeg")
         case ("rock", "paper"):
-            Result?.text = "\(player1) vs. \(player2): You Win"
+            Result?.text = "\(player1) vs. \(player2): You Lose :("
             resultImage?.image = UIImage(named: "PaperCoversRock.jpg")
         case ("paper", "rock"):
-            Result?.text = "\(player1) vs. \(player2): I Win"
+            Result?.text = "\(player1) vs. \(player2): You Win! :)"
             resultImage?.image = UIImage(named: "PaperCoversRock.jpg")
         case ("paper", "scissors"):
-            Result?.text = "\(player1) vs. \(player2): You Win"
+            Result?.text = "\(player1) vs. \(player2): You Lose... :("
             resultImage?.image = UIImage(named: "ScissorsCutPaper.jpg")
         case ("scissors", "rock"):
-            Result?.text = "\(player1) vs. \(player2): You Win"
+            Result?.text = "\(player1) vs. \(player2): You Lose... :)"
             resultImage?.image = UIImage(named: "RockCrushesScissors.jpeg")
         case ("scissors", "paper"):
-            Result?.text = "\(player1) vs. \(player2): I Win"
+            Result?.text = "\(player1) vs. \(player2): You Win! :)"
             resultImage?.image = UIImage(named: "ScissorsCutPaper.jpg")
         default:
             Result?.text = "\(player1) vs. \(player2): It's a tie"
